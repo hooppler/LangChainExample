@@ -8,6 +8,8 @@ from langchain_openai import ChatOpenAI
 from langchain.output_parsers import StructuredOutputParser
 from langchain.output_parsers import ResponseSchema
 from langchain.prompts import ChatPromptTemplate
+from langchain.chains import ConversationChain
+from langchain.memory import ConversationBufferMemory
 
 chat = ChatOpenAI(openai_api_key=openai_api_key, model_name="gpt-3.5-turbo", temperature=0.6)
 
@@ -39,9 +41,18 @@ result1_dict = output_parser.parse(result1.content)
 
 print(result1_dict)
 
+memory = ConversationBufferMemory()
 
+conversation = ConversationChain(
+    llm=chat,
+    memory=memory,
+    verbose=True)
 
+conversation.predict(input="Hi, my name is Aleksandar, what is yours?")
+conversation.predict(input="Tell me the name of a man who destroyed the world?")
+conversation.predict(input="What is my name?")
 
+print(memory.buffer)
 
 
 
