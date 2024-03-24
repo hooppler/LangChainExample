@@ -21,10 +21,10 @@ split_documents = text_splitter.split_documents(documents=documents)
 # Embedding
 embeddings = OpenAIEmbeddings()
 
-# Vector Database (Base class VectorStore)
+# Vector Database
 db = DocArrayInMemorySearch.from_documents(documents=documents, embedding=embeddings)
 
-# Retrievals (Base class VectorStoreRetriever)
+# Retrievals
 retriever = db.as_retriever(search_type="similarity", search_kwargs={"k": 2})
 result = db.search(query="Avoid vague language, such as “pretty,” ", search_type="similarity")
 
@@ -57,4 +57,10 @@ print(result2["question"])
 print(result2["answer"])
 print(result3["question"])
 print(result3["answer"])
+
+
+pass
+
+
+
 

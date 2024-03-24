@@ -52,7 +52,7 @@ class cbfs(param.Parameterized):
     def __init__(self, **params):
         super(cbfs, self).__init__(**params)
         self.panels = []
-        self.loaded_file = "docs/essays.pdf"
+        self.loaded_file = "../docs/essays.pdf"
         self.qa = load_db(self.loaded_file, "stuff", 4)
 
     # def call_load_db(self, count):
@@ -70,7 +70,7 @@ class cbfs(param.Parameterized):
     def convchain(self, query):
         # if not query:
         #     None
-        result = self.qa({"question": query, "chat_history": self.chat_history})
+        result = self.qa.invoke({"question": query, "chat_history": self.chat_history})
         self.chat_history.extend([(query, result["answer"])])
         self.db_query = result["generated_question"]
         self.db_response = result["source_documents"]

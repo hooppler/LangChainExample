@@ -12,7 +12,7 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import DocArrayInMemorySearch
 
 # Load
-loader = PyPDFLoader(file_path="docs/essays.pdf")
+loader = PyPDFLoader(file_path="../docs/essays.pdf")
 docs = loader.load()
 
 # Transform

@@ -9,7 +9,7 @@ from langchain_openai import OpenAIEmbeddings
 
 
 
-loader = PyPDFLoader(file_path="docs/essays.pdf")
+loader = PyPDFLoader(file_path="../docs/essays.pdf")
 
 pages = loader.load()
 
