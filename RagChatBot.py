@@ -5,10 +5,10 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain.chains import RetrievalQA,  ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-from langchain_community.chat_models import ChatOpenAI
 from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import PyPDFLoader
@@ -121,7 +121,7 @@ class cbfs(param.Parameterized):
 cb = cbfs()
 
 
-print(cb.convchain("What is document about?"))
+print(cb.convchain("What are descriptive essays?"))
 
 
 # file_input = pn.widgets.FileInput(accept='.pdf')
