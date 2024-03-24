@@ -2,9 +2,8 @@
 
 This repo contains of some code katas I practiced while learning LangChain
 
-For now pay attention on test16
-
-test13 are Gradio katas.
+code_catas - Final versions of katas.\
+exercises - Directory for kata practicing.
 
 ## Problem With Doc
 Solution:
