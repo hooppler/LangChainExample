@@ -3,5 +3,6 @@ langchain
 langchain-openai
 langchain-community
 python-dotenv
+chromadb
 # param
 # gradio
