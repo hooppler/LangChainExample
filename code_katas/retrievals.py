@@ -11,7 +11,7 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 
 # Loader
-loader = PyPDFLoader(file_path="../docs/essays.pdf")
+loader = PyPDFLoader(file_path="../resources/docs/essays.pdf")
 documents = loader.load()
 
 # Transform
