@@ -2,7 +2,7 @@
 
 This repo contains of some code katas I practiced while learning LangChain
 
-code_catas - Final versions of katas.\
+code_katas - Final versions of katas.\
 exercises - Directory for kata practicing.
 
 ## Problem With DocArray
