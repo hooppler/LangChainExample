@@ -1,16 +1,16 @@
 import os
 from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
 from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
 from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_openai import ChatOpenAI
 from langchain.chains import ConversationalRetrievalChain
 
-from langchain_community.vectorstores import Chroma
+load_dotenv(find_dotenv())
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Loader
 loader = PyPDFLoader(file_path="../resources/docs/essays.pdf")
